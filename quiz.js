@@ -77,7 +77,7 @@ const PAIR_RESULTS = {
     conclusion: "À ÉCRIRE (≈600 mots) — Ulysse — Combattant → Créatif.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Combattant->Protecteur": {
-    figure: "À DÉFINIR",
+    figure: "Hector",
     tagline: "Guerrier qui se bat d’abord pour défendre les siens.",
     conclusion: "À ÉCRIRE (≈600 mots) — (Figure à définir) — Combattant → Protecteur.\n\n(Colle ici ton texte de conclusion.)",
   },
@@ -87,7 +87,7 @@ const PAIR_RESULTS = {
     conclusion: "À ÉCRIRE (≈600 mots) — Achille — Combattant → Séducteur.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Combattant->Libre": {
-    figure: "À DÉFINIR",
+    figure: "À Bellérophon",
     tagline: "Héros audacieux qui cherche le dépassement et le risque.",
     conclusion: "À ÉCRIRE (≈600 mots) — (Figure à définir) — Combattant → Libre.\n\n(Colle ici ton texte de conclusion.)",
   },
@@ -120,39 +120,39 @@ const PAIR_RESULTS = {
   },
   "Créatif->Séducteur": {
     figure: "Orphée",
-    tagline: "Charme artistique : touche, attire, transforme par l’émotion.",
+    tagline: "Touche, attire, transforme par l’émotion.",
     conclusion: "À ÉCRIRE (≈600 mots) — Orphée — Créatif → Séducteur.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Créatif->Libre": {
     figure: "Dionysos",
-    tagline: "Création libre et festive : casse les cadres, libère les autres.",
+    tagline: "Casse les cadres, libère les autres.",
     conclusion: "À ÉCRIRE (≈600 mots) — Dionysos — Créatif → Libre.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Créatif->Indépendant": {
     figure: "Héphaïstos",
-    tagline: "Créateur solitaire : bâtit, répare, avance à son rythme.",
+    tagline: "Bâtit, répare, avance à son rythme.",
     conclusion: "À ÉCRIRE (≈600 mots) — Héphaïstos — Créatif → Indépendant.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Créatif->Sensible": {
     figure: "Séléné",
-    tagline: "Imagination douce : intensité intérieure, sensibilité et poésie.",
+    tagline: "Intensité intérieure, sensibilité et poésie.",
     conclusion: "À ÉCRIRE (≈600 mots) — Séléné — Créatif → Sensible.\n\n(Colle ici ton texte de conclusion.)",
   },
 
   // --- PROTECTEUR dominant ---
   "Protecteur->Leader": {
     figure: "Hestia",
-    tagline: "Stabilité silencieuse : structure le groupe en gardant la paix.",
+    tagline: "Structure le groupe en gardant la paix.",
     conclusion: "À ÉCRIRE (≈600 mots) — Hestia — Protecteur → Leader.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Protecteur->Combattant": {
     figure: "Artémis",
-    tagline: "Protection active : défend les limites et frappe si nécessaire.",
+    tagline: "Défend les limites et frappe si nécessaire.",
     conclusion: "À ÉCRIRE (≈600 mots) — Artémis — Protecteur → Combattant.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Protecteur->Créatif": {
     figure: "Déméter",
-    tagline: "Protège en nourrissant : crée la sécurité par le soin et le cycle.",
+    tagline: "Crée la sécurité par le soin et le cycle.",
     conclusion: "À ÉCRIRE (≈600 mots) — Déméter — Protecteur → Créatif.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Protecteur->Séducteur": {
@@ -167,24 +167,24 @@ const PAIR_RESULTS = {
   },
   "Protecteur->Indépendant": {
     figure: "Rhéa",
-    tagline: "Protège en secret : choisit la stratégie et l’autonomie pour sauver.",
+    tagline: "Protège en secret pour sauver ses proches.",
     conclusion: "À ÉCRIRE (≈600 mots) — Rhéa — Protecteur → Indépendant.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Protecteur->Sensible": {
     figure: "Pénélope",
-    tagline: "Protection du foyer : loyauté, patience, émotions maîtrisées.",
+    tagline: "Protection du foyer avec loyauté.",
     conclusion: "À ÉCRIRE (≈600 mots) — Pénélope — Protecteur → Sensible.\n\n(Colle ici ton texte de conclusion.)",
   },
 
   // --- SÉDUCTEUR dominant ---
   "Séducteur->Leader": {
     figure: "Aphrodite",
-    tagline: "Influence par le désir : attire et guide par la relation.",
+    tagline: "Attire et guide par la relation.",
     conclusion: "À ÉCRIRE (≈600 mots) — Aphrodite — Séducteur → Leader.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Séducteur->Combattant": {
-    figure: "À DÉFINIR",
-    tagline: "Charme offensif : séduit, provoque, gagne par l’impact.",
+    figure: "Nérée",
+    tagline: "Séduit, provoque, gagne par l’impact.",
     conclusion: "À ÉCRIRE (≈600 mots) — (Figure à définir) — Séducteur → Combattant.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Séducteur->Créatif": {
@@ -194,54 +194,54 @@ const PAIR_RESULTS = {
   },
   "Séducteur->Protecteur": {
     figure: "Calypso",
-    tagline: "Attachement intense : proximité, soin… parfois possessif.",
+    tagline: "Proximité, soin… parfois possessif.",
     conclusion: "À ÉCRIRE (≈600 mots) — Calypso — Séducteur → Protecteur.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Séducteur->Libre": {
     figure: "Apollon",
-    tagline: "Brille à sa manière : suit sa voie, quitte à compliquer l’amour.",
+    tagline: "Brille à sa manière quitte à compliquer l’amour.",
     conclusion: "À ÉCRIRE (≈600 mots) — Apollon — Séducteur → Libre.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Séducteur->Indépendant": {
     figure: "Circé",
-    tagline: "Magnétisme autonome : choisit la distance, garde le contrôle.",
+    tagline: "Magnétisme autonome.",
     conclusion: "À ÉCRIRE (≈600 mots) — Circé — Séducteur → Indépendant.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Séducteur->Sensible": {
     figure: "Médée",
-    tagline: "Passion brûlante : amour total, émotion extrême, rupture violente.",
+    tagline: "Passion brûlante.",
     conclusion: "À ÉCRIRE (≈600 mots) — Médée — Séducteur → Sensible.\n\n(Colle ici ton texte de conclusion.)",
   },
 
   // --- LIBRE dominant ---
   "Libre->Leader": {
     figure: "Hermès",
-    tagline: "Libre et agile : organise, négocie et débloque les situations.",
+    tagline: "Organise, négocie et débloque les situations.",
     conclusion: "À ÉCRIRE (≈600 mots) — Hermès — Libre → Leader.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Libre->Combattant": {
     figure: "Atalante",
-    tagline: "Indépendance active : avance, lutte, refuse d’être freinée.",
+    tagline: "Avance, lutte, refuse d’être freinée.",
     conclusion: "À ÉCRIRE (≈600 mots) — Atalante — Libre → Combattant.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Libre->Créatif": {
     figure: "Pan",
-    tagline: "Liberté instinctive : créativité, nature, impulsion artistique.",
+    tagline: "Liberté instinctive.",
     conclusion: "À ÉCRIRE (≈600 mots) — Pan — Libre → Créatif.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Libre->Protecteur": {
     figure: "Iris",
-    tagline: "Mouvement au service du lien : apporte, relie, protège par présence.",
+    tagline: "Apporte, relie, protège par présence.",
     conclusion: "À ÉCRIRE (≈600 mots) — Iris — Libre → Protecteur.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Libre->Sensible": {
-    figure: "À DÉFINIR",
-    tagline: "Sensible et mobile : fuit l’étouffement, suit l’émotion du moment.",
+    figure: "Icare",
+    tagline: "Fuit l’étouffement, suit l’émotion du moment.",
     conclusion: "À ÉCRIRE (≈600 mots) — (Figure à définir) — Libre → Sensible.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Libre->Indépendant": {
-    figure: "À DÉFINIR",
-    tagline: "Libre et autonome : explore, se détache, vit selon ses propres règles.",
+    figure: "Océan",
+    tagline: "Explore, se détache, vit selon ses propres règles.",
     conclusion: "À ÉCRIRE (≈600 mots) — (Figure à définir) — Libre → Indépendant.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Libre->Séducteur": {
@@ -253,17 +253,17 @@ const PAIR_RESULTS = {
   // --- INDÉPENDANT dominant ---
   "Indépendant->Leader": {
     figure: "Hadès",
-    tagline: "Autorité distante : contrôle calme, solitude assumée.",
+    tagline: "Contrôle calme, solitude assumée.",
     conclusion: "À ÉCRIRE (≈600 mots) — Hadès — Indépendant → Leader.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Indépendant->Combattant": {
     figure: "Thésée",
-    tagline: "Héros autonome : tranche seul, avance sans attendre l’accord.",
+    tagline: "Tranche seul, avance sans attendre l’accord.",
     conclusion: "À ÉCRIRE (≈600 mots) — Thésée — Indépendant → Combattant.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Indépendant->Créatif": {
     figure: "Hécate",
-    tagline: "Autonomie intérieure : magie, seuils, chemins non-linéaires.",
+    tagline: "Autonomie intérieure.",
     conclusion: "À ÉCRIRE (≈600 mots) — Hécate — Indépendant → Créatif.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Indépendant->Protecteur": {
@@ -273,54 +273,54 @@ const PAIR_RESULTS = {
   },
   "Indépendant->Sensible": {
     figure: "Hippolyte",
-    tagline: "Rigidité et fragilité : pudeur, intensité intérieure, blessure facile.",
+    tagline: "Rigidité et fragilité.",
     conclusion: "À ÉCRIRE (≈600 mots) — Hippolyte — Indépendant → Sensible.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Indépendant->Libre": {
     figure: "Œdipe",
-    tagline: "Quête solitaire hors normes : avance même quand tout s’effondre.",
+    tagline: "Avance même quand tout s’effondre.",
     conclusion: "À ÉCRIRE (≈600 mots) — Œdipe — Indépendant → Libre.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Indépendant->Séducteur": {
     figure: "Daphné",
-    tagline: "Refus du lien malgré l’attirance : protège sa liberté par la fuite.",
+    tagline: "Protège sa liberté par la fuite.",
     conclusion: "À ÉCRIRE (≈600 mots) — Daphné — Indépendant → Séducteur.\n\n(Colle ici ton texte de conclusion.)",
   },
 
   // --- SENSIBLE dominant ---
   "Sensible->Leader": {
-    figure: "À DÉFINIR",
-    tagline: "Influence douce : mène par l’émotion, la compassion et l’exemple.",
+    figure: "Andromaque",
+    tagline: "Mène par l’émotion, la compassion et l’exemple.",
     conclusion: "À ÉCRIRE (≈600 mots) — (Figure à définir) — Sensible → Leader.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Sensible->Combattant": {
-    figure: "À DÉFINIR",
+    figure: "Iphigénie",
     tagline: "Émotion qui pousse à agir : défend par attachement, colère ou amour.",
     conclusion: "À ÉCRIRE (≈600 mots) — (Figure à définir) — Sensible → Combattant.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Sensible->Créatif": {
     figure: "Cassandre",
-    tagline: "Sensibilité visionnaire : comprend avant les autres, souvent incomprise.",
+    tagline: "Comprend avant les autres, souvent incomprise.",
     conclusion: "À ÉCRIRE (≈600 mots) — Cassandre — Sensible → Créatif.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Sensible->Protecteur": {
     figure: "Thétis",
-    tagline: "Protège par l’amour : tente d’épargner la souffrance et le destin.",
+    tagline: "Tente d’épargner la souffrance et le destin.",
     conclusion: "À ÉCRIRE (≈600 mots) — Thétis — Sensible → Protecteur.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Sensible->Séducteur": {
     figure: "Psyché",
-    tagline: "Attachement intense : vulnérabilité, confiance, besoin d’être aimée.",
+    tagline: "Vulnérabilité, confiance, besoin d’être aimée.",
     conclusion: "À ÉCRIRE (≈600 mots) — Psyché — Sensible → Séducteur.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Sensible->Libre": {
     figure: "Ariane",
-    tagline: "Suit l’amour et l’intuition : quitte tout pour une histoire forte.",
+    tagline: "Suit l’amour et l’intuition.",
     conclusion: "À ÉCRIRE (≈600 mots) — Ariane — Sensible → Libre.\n\n(Colle ici ton texte de conclusion.)",
   },
   "Sensible->Indépendant": {
     figure: "Niobé",
-    tagline: "Fierté solitaire : douleur intérieure, isolement, blessure durable.",
+    tagline: "Fierté solitaire.",
     conclusion: "À ÉCRIRE (≈600 mots) — Niobé — Sensible → Indépendant.\n\n(Colle ici ton texte de conclusion.)",
   },
 };
