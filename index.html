@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test de personnalité — Mythologie grecque</title>
+
+  <meta name="description" content="Test de personnalité basé sur des profils inspirés de la mythologie grecque." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">⚡</div>
+        <div class="brand-text">
+          <div class="brand-title">Test de personnalité</div>
+          <div class="brand-subtitle">Profils inspirés de la mythologie grecque</div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="ghost-btn" id="topRestartBtn" type="button" title="Recommencer">
+          Recommencer
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page-inner">
+      <!-- Le quiz s'affiche ici -->
+      <div id="app" class="app"></div>
+
+      <footer class="site-footer">
+        <p>
+          Astuce : tu peux cocher plusieurs réponses si elles te ressemblent.
+        </p>
+      </footer>
+    </div>
+  </main>
+
+  <script src="quiz.js"></script>
+  <script>
+    // Bouton "Recommencer" du haut : refresh simple (fonctionne partout)
+    document.getElementById("topRestartBtn")?.addEventListener("click", () => {
+      window.location.reload();
+    });
+  </script>
+</body>
+</html>
