@@ -1,0 +1,284 @@
+/* --------------------------
+   Base
+-------------------------- */
+:root{
+  --bg: #0b1020;
+  --card: rgba(255,255,255,.08);
+  --card2: rgba(255,255,255,.10);
+  --border: rgba(255,255,255,.16);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.70);
+
+  --accent: #8ab4ff;
+  --accent2: #b9a7ff;
+
+  --shadow: 0 10px 30px rgba(0,0,0,.30);
+  --radius: 16px;
+}
+
+*{ box-sizing: border-box; }
+html,body{ height: 100%; }
+body{
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(138,180,255,.25), transparent 55%),
+    radial-gradient(1000px 500px at 85% 35%, rgba(185,167,255,.22), transparent 55%),
+    radial-gradient(800px 400px at 50% 95%, rgba(255,255,255,.08), transparent 50%),
+    var(--bg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.35;
+}
+
+.page{
+  padding: 22px 16px 60px;
+}
+
+.page-inner{
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+/* --------------------------
+   Header
+-------------------------- */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: rgba(11, 16, 32, .55);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.header-inner{
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 14px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.brand-mark{
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display:grid;
+  place-items:center;
+  background: linear-gradient(135deg, rgba(138,180,255,.30), rgba(185,167,255,.25));
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+  font-size: 18px;
+}
+
+.brand-title{
+  font-weight: 800;
+  letter-spacing: .2px;
+  font-size: 15px;
+}
+
+.brand-subtitle{
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.header-actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+/* --------------------------
+   Buttons
+-------------------------- */
+button{
+  font: inherit;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .08s ease, background .18s ease, border-color .18s ease;
+}
+
+button:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.26);
+}
+
+button:active{
+  transform: translateY(1px);
+}
+
+button:disabled{
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+.ghost-btn{
+  background: transparent;
+}
+
+/* --------------------------
+   Quiz Card (compat avec ton quiz.js)
+-------------------------- */
+.app .card{
+  margin: 18px auto 0;
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+  box-shadow: var(--shadow);
+}
+
+.app h2{
+  margin: 10px 0 10px;
+  font-size: 20px;
+  letter-spacing: .1px;
+}
+
+.app h3{
+  margin: 10px 0 8px;
+  font-size: 16px;
+  color: rgba(255,255,255,.92);
+}
+
+.progress{
+  display:inline-flex;
+  align-items:center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.progress::before{
+  content:"";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 0 3px rgba(138,180,255,.10);
+}
+
+/* --------------------------
+   Options
+-------------------------- */
+.options{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+  margin: 14px 0 10px;
+}
+
+.option{
+  display:flex;
+  gap: 12px;
+  align-items:flex-start;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.12);
+  transition: background .18s ease, border-color .18s ease, transform .08s ease;
+}
+
+.option:hover{
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.22);
+}
+
+.option:active{
+  transform: translateY(1px);
+}
+
+.option input[type="checkbox"]{
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.optionLabel{
+  font-weight: 800;
+  min-width: 22px;
+  opacity: .95;
+}
+
+.optionText{
+  color: rgba(255,255,255,.92);
+}
+
+/* --------------------------
+   Actions / hint
+-------------------------- */
+.actions{
+  display:flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.hint{
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* --------------------------
+   Results details
+-------------------------- */
+details{
+  margin-top: 10px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: rgba(0,0,0,.10);
+}
+
+summary{
+  cursor: pointer;
+  color: rgba(255,255,255,.90);
+  font-weight: 700;
+}
+
+details ul{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: rgba(255,255,255,.86);
+}
+
+hr{
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,.14);
+  margin: 16px 0;
+}
+
+/* --------------------------
+   Footer
+-------------------------- */
+.site-footer{
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* --------------------------
+   Responsive
+-------------------------- */
+@media (max-width: 520px){
+  .app h2{ font-size: 18px; }
+  .brand-subtitle{ display:none; }
+  .brand-title{ font-size: 14px; }
+  button{ width: 100%; }
+  .actions{ flex-direction: column; }
+}
