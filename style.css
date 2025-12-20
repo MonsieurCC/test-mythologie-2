@@ -138,6 +138,9 @@ button:disabled{
   border: 1px solid var(--border);
   background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
   box-shadow: var(--shadow);
+
+  /* IMPORTANT: on laisse de la place en bas pour la barre sticky */
+  padding-bottom: 86px;
 }
 
 .app h2{
@@ -219,11 +222,36 @@ button:disabled{
 /* --------------------------
    Actions / hint
 -------------------------- */
+
+/* ✅ BARRE DE BOUTONS TOUJOURS VISIBLE */
 .actions{
+  position: sticky;
+  bottom: 10px;
+  z-index: 5;
+
   display:flex;
   gap: 10px;
-  margin-top: 14px;
   flex-wrap: wrap;
+
+  margin-top: 14px;
+
+  padding: 12px;
+  border-radius: 14px;
+
+  background: rgba(11,16,32,.75);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,.22);
+}
+
+/* Optionnel: rend "Suivant" un peu plus visible */
+#nextBtn{
+  border-color: rgba(138,180,255,.35);
+  background: rgba(138,180,255,.10);
+}
+#nextBtn:hover{
+  background: rgba(138,180,255,.16);
+  border-color: rgba(138,180,255,.55);
 }
 
 .hint{
@@ -279,6 +307,8 @@ hr{
   .app h2{ font-size: 18px; }
   .brand-subtitle{ display:none; }
   .brand-title{ font-size: 14px; }
+
   button{ width: 100%; }
-  .actions{ flex-direction: column; }
+  .actions{ flex-direction: column; bottom: 8px; }
+  .app .card{ padding-bottom: 140px; } /* plus de place car boutons en colonne */
 }
