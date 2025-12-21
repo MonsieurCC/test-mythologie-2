@@ -1032,73 +1032,74 @@ function renderQuestion() {
     return;
   }
 
-  const ranks = state.answersRank[q.id] || [0, 0, 0, 0];
+  // IMPORTANT: on stocke par index, pas par q.id
+  const ranks = state.answersRank[state.index] || [0, 0, 0, 0];
 
-app.innerHTML = `
-  <div class="card">
-    <div class="progress">Question ${state.index + 1} / ${QUESTIONS.length}</div>
-    <h2>${q.id}. ${escapeHtml(q.text)}</h2>
+  app.innerHTML = `
+    <div class="card">
+      <div class="progress">Question ${state.index + 1} / ${QUESTIONS.length}</div>
+      <h2>${q.id}. ${escapeHtml(q.text)}</h2>
 
-    <div id="optionsContainer" class="options">
-      ${q.options
-        .map((opt, i) => {
-          const rank = ranks[i] ?? 0;
-          const rankedClass = rank > 0 ? "is-ranked" : "";
-          return `
-            <button type="button" class="optionBtn option ${rankedClass}" data-idx="${i}">
-              <span class="rankBadge">${rank}</span>
-              <span class="optionLabel">${escapeHtml(opt.label)}.</span>
-              <span class="optionText">${escapeHtml(opt.text)}</span>
-            </button>
-          `;
-        })
-        .join("")}
+      <div id="optionsContainer" class="options">
+        ${q.options
+          .map((opt, i) => {
+            const rank = ranks[i] ?? 0;
+            const rankedClass = rank > 0 ? "is-ranked" : "";
+            return `
+              <button type="button" class="optionBtn option ${rankedClass}" data-idx="${i}">
+                <span class="rankBadge">${rank}</span>
+                <span class="optionLabel">${escapeHtml(opt.label)}.</span>
+                <span class="optionText">${escapeHtml(opt.text)}</span>
+              </button>
+            `;
+          })
+          .join("")}
+      </div>
+
+      <div class="actions">
+        <button id="prevBtn" type="button" ${state.index === 0 ? "disabled" : ""}>Précédent</button>
+        <button id="clearBtn" type="button">Effacer</button>
+        <button id="nextBtn" type="button">${state.index === QUESTIONS.length - 1 ? "Terminer" : "Suivant"}</button>
+      </div>
+
+      <div class="hint">
+        Clique sur les options dans l’ordre : <b>1, 2, 3, 4</b>.
+        Reclique une option pour l’enlever. Bouton <b>Effacer</b> pour recommencer la question.
+      </div>
     </div>
+  `;
 
-    <div class="actions">
-      <button id="prevBtn" type="button" ${state.index === 0 ? "disabled" : ""}>Précédent</button>
-      <button id="clearBtn" type="button">Effacer</button>
-      <button id="nextBtn" type="button">${state.index === QUESTIONS.length - 1 ? "Terminer" : "Suivant"}</button>
-    </div>
+  document.getElementById("optionsContainer").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-idx]");
+    if (!btn) return;
 
-    <div class="hint">
-      Clique sur les options dans l’ordre : <b>1, 2, 3, 4</b>.
-      Reclique une option pour l’enlever. Bouton <b>Effacer</b> pour recommencer la question.
-    </div>
-  </div>
-`;
+    const optionIndex = Number(btn.dataset.idx);
+    const arr = state.answersRank[state.index] || [0, 0, 0, 0];
 
-document.getElementById("optionsContainer").addEventListener("click", (e) => {
-  const btn = e.target.closest("button[data-idx]");
-  if (!btn) return;
+    assignNextRank(arr, optionIndex);
 
-  const optionIndex = Number(btn.dataset.idx);
-  const arr = state.answersRank[q.id] || [0, 0, 0, 0];
-
-  assignNextRank(arr, optionIndex);
-
-  state.answersRank[q.id] = arr;
-  renderQuestion();
-});
-
-el("prevBtn").addEventListener("click", () => {
-  state.index = Math.max(0, state.index - 1);
-  renderQuestion();
-});
-
-el("nextBtn").addEventListener("click", () => {
-  if (state.index >= QUESTIONS.length - 1) {
-    renderResults();
-  } else {
-    state.index += 1;
+    state.answersRank[state.index] = arr;
     renderQuestion();
-  }
-});
+  });
 
-el("clearBtn").addEventListener("click", () => {
-  clearQuestionRanks(q.id);
-  renderQuestion();
-});
+  el("prevBtn").addEventListener("click", () => {
+    state.index = Math.max(0, state.index - 1);
+    renderQuestion();
+  });
+
+  el("nextBtn").addEventListener("click", () => {
+    if (state.index >= QUESTIONS.length - 1) {
+      renderResults();
+    } else {
+      state.index += 1;
+      renderQuestion();
+    }
+  });
+
+  el("clearBtn").addEventListener("click", () => {
+    state.answersRank[state.index] = [0, 0, 0, 0];
+    renderQuestion();
+  });
 }
 
 // --------------------
