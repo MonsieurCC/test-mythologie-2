@@ -1027,65 +1027,75 @@ function renderQuestion() {
     return;
   }
 
-  const selectedProfiles = state.answersRank[q.id] || [];
+  const ranks = state.answersRank[q.id] || [0, 0, 0, 0];
 
   app.innerHTML = `
     <div class="card">
       <div class="progress">Question ${state.index + 1} / ${QUESTIONS.length}</div>
       <h2>${q.id}. ${escapeHtml(q.text)}</h2>
 
-      <form id="optionsForm" class="options">
+      <div id="optionsContainer" class="options">
         ${q.options
           .map((opt, i) => {
-            const checked = selectedProfiles.includes(opt.profile) ? "checked" : "";
-            const inputId = `q${q.id}_${i}`;
+            const rank = ranks[i] ?? 0;
+            const rankedClass = rank > 0 ? "is-ranked" : "";
             return `
-              <label class="option" for="${inputId}">
-                <input type="checkbox" id="${inputId}" name="opt" value="${escapeHtml(opt.profile)}" ${checked} />
-                <span class="optionLabel">${opt.label}.</span>
+              <button type="button" class="optionBtn option ${rankedClass}" data-idx="${i}">
+                <span class="rankBadge">${rank}</span>
+                <span class="optionLabel">${escapeHtml(opt.label)}.</span>
                 <span class="optionText">${escapeHtml(opt.text)}</span>
-              </label>
+              </button>
             `;
           })
           .join("")}
-      </form>
+      </div>
 
       <div class="actions">
-        <button id="prevBtn" ${state.index === 0 ? "disabled" : ""}>Précédent</button>
-        <button id="nextBtn">Suivant</button>
+        <button id="prevBtn" type="button" ${state.index === 0 ? "disabled" : ""}>Précédent</button>
+        <button id="nextBtn" type="button">${state.index === QUESTIONS.length - 1 ? "Terminer" : "Suivant"}</button>
       </div>
 
       <div class="hint">
-        Tu peux cocher <b>plusieurs réponses</b> si elles te ressemblent. (Aucune limite)
+        Clique sur une option pour faire tourner son rang :
+        <b>0 → 1 → 2 → 3 → 4 → 0</b>.
       </div>
     </div>
   `;
 
-  el("prevBtn").addEventListener("click", (e) => {
-    e.preventDefault();
-    saveSelections(q.id);
+  document.getElementById("optionsContainer").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-idx]");
+    if (!btn) return;
+
+    const optionIndex = Number(btn.dataset.idx);
+    const arr = state.answersRank[q.id] || [0, 0, 0, 0];
+
+    const current = arr[optionIndex] ?? 0;
+    const newRank = nextRankValue(current);
+
+    arr[optionIndex] = newRank;
+    enforceUniqueRanks(arr, optionIndex, newRank);
+
+    state.answersRank[q.id] = arr;
+    renderQuestion();
+  });
+
+  el("prevBtn").addEventListener("click", () => {
     state.index = Math.max(0, state.index - 1);
     renderQuestion();
   });
 
-  el("nextBtn").addEventListener("click", (e) => {
-    e.preventDefault();
-    saveSelections(q.id);
-    state.index += 1;
-    renderQuestion();
+  el("nextBtn").addEventListener("click", () => {
+    if (state.index >= QUESTIONS.length - 1) {
+      renderResults();
+    } else {
+      state.index += 1;
+      renderQuestion();
+    }
   });
 }
 
-function saveSelections(questionId) {
-  const form = document.getElementById("optionsForm");
-  if (!form) return;
-
-  const checked = Array.from(form.querySelectorAll('input[type="checkbox"]:checked'))
-    .map((input) => input.value)
-    .filter(Boolean);
-
-  state.answersRank[questionId] = checked;
-}
+// Ancienne logique checkbox → inutilisée
+function saveSelections() {}
 
 function renderResults() {
   const app = el("app");
