@@ -956,14 +956,25 @@ function makeEmptyCounts() {
   return counts;
 }
 
-function tallyProfiles(answersRank) {
+function tallyProfiles() {
   const counts = makeEmptyCounts();
-  for (const qid of Object.keys(answersRank)) {
-    for (const profile of answersRank[qid]) {
+
+  for (let qi = 0; qi < QUESTIONS.length; qi++) {
+    const q = QUESTIONS[qi];
+    const ranks = state.answersRank[qi] || [0, 0, 0, 0];
+
+    for (let i = 0; i < q.options.length; i++) {
+      const opt = q.options[i];
+      const rank = ranks[i] ?? 0;
+      const pts = RANK_POINTS[rank] ?? 0;
+      if (!pts) continue;
+
+      const profile = opt.profile;
       if (counts[profile] === undefined) counts[profile] = 0;
-      counts[profile] += 1;
+      counts[profile] += pts;
     }
   }
+
   return counts;
 }
 
