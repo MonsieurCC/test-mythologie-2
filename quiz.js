@@ -31,6 +31,7 @@ const PAIR_RESULTS = {
   // --- LEADER dominant ---
   "Leader->Combattant": {
     figure: "Zeus",
+    image: "images/figures/zeus.jpg",
     tagline: "Autorité suprême qui impose sa volonté par la force.",
     conclusion: "Zeus est le roi des dieux de l’Olympe, maître du ciel et de la foudre. Fils de Cronos, il échappe au destin tragique de ses frères et sœurs qui furent avalés par leur père, puis le renverse pour établir un nouvel ordre divin. Zeus gouverne par l’autorité, la justice, mais aussi par la séduction et les passions. Il protège ceux qui respectent les lois sacrées de l’hospitalité et de la parole donnée. Pourtant, ses multiples amours et caprices montrent un être puissant, capable d’unir les mondes, mais dont les désirs peuvent provoquer conflits et transformations. Zeus incarne le pouvoir créateur… et la responsabilité de gérer ce qu’il provoque.\n\nSi ton résultat correspond à Zeus, tu es une personne dotée d’une grande force intérieure, qu’elle soit mentale, sociale ou émotionnelle. Tu peux diriger, influencer, protéger, décider. Tu n’es pas à l’aise dans les rôles passifs : tu veux agir, tu veux orienter, tu veux comprendre comment améliorer ce qui t’entoure. Tu ne cherches pas forcément à dominer, mais à organiser, à structurer, à construire des règles qui permettent aux choses de fonctionner. Tu peux devenir un pilier pour les autres, quelqu’un sur qui on compte, quelqu’un qui prend les décisions difficiles.\n\nComme Zeus, tu peux être passionné(e), ambitieux(se), attiré(e) par de grands projets ou par des expériences intenses. Tu n’aimes pas l’ennui, ni la stagnation. Tu veux que la vie soit à la hauteur de ta puissance intérieure. Cela peut te rendre inspirant(e)… mais aussi exigeant(e). Tu attends parfois beaucoup de toi-même et des autres. Et tu peux être déçu(e) quand on ne suit pas ton rythme ou qu’on ne comprend pas la vision qui t’anime.\n\nTon plus grand défi, comme celui de Zeus, réside dans la gestion de ton pouvoir. Tu as une influence réelle. Tu peux provoquer des changements, des émotions fortes, des décisions marquantes. Mais tu dois apprendre quand intervenir… et quand laisser les autres faire leur chemin. Si tu veux tout contrôler, même par souci de bien faire, tu peux fatiguer ton entourage, te surcharger, ou paraître autoritaire. Tu n’es pas obligé(e) de porter tout le ciel.\n\nTu as aussi une intensité affective. Zeus n’est pas seulement un chef ; il est passionné, impulsif dans l’amour, parfois imprudent dans ses désirs. Tu peux toi aussi aimer fort, désirer intensément, être séduit(e) par des liens profonds ou par des expériences marquantes. Tu peux créer beaucoup autour de toi… mais aussi provoquer du chaos malgré toi si tu n’es pas clair(e) dans tes intentions.\n\nCe que ton résultat révèle, c’est que tu es un(e) bâtisseur(se). Tu peux devenir un(e) leader, un(e) protecteur(trice), quelqu’un qui fait avancer les choses, qui défend ceux qu’il aime. Tu peux inspirer par ta force, ton ambition, ta présence. Tu rappelles que l’autorité véritable n’écrase pas ; elle élève et protège. Tu n’as pas besoin d’être parfait(e) : tu dois simplement apprendre à diriger ta puissance avec conscience.\n\nComme Zeus, tu n’es pas défini(e) par tes passions, mais par ce que tu en fais. Tu n’es pas destiné(e) à imposer, mais à guider. Tu peux utiliser ta foudre pour éclairer, pas pour brûler. Ton pouvoir n’est pas une menace : c’est un outil. Et le monde a besoin de gens capables d’agir avec force… sans oublier qu’ils sont humains.",
   },
@@ -1125,6 +1126,7 @@ function renderResults() {
   const figure = mapped?.figure ?? "Aucune figure liée";
   const tagline = mapped?.tagline ?? "Cette combinaison n’a pas encore été associée à une figure.";
   const conclusion = mapped?.conclusion ?? `À AJOUTER — clé: ${key}`;
+  const imageSrc = mapped?.image; 
 
   app.innerHTML = `
     <div class="card">
@@ -1136,7 +1138,16 @@ function renderResults() {
       <hr/>
 
       <h3>${escapeHtml(figure)}</h3>
-      <p style="opacity:.85; margin-top: 6px;">${escapeHtml(tagline)}</p>
+
+         ${imageSrc ? `
+         <div class="result-image">
+         <img src="${imageSrc}" alt="${escapeHtml(figure)}">
+         </div>
+         ` : ""}
+
+        <p style="opacity:.85; margin-top: 6px;">
+        ${escapeHtml(tagline)}
+        </p>
 
       <div style="margin-top: 12px; padding: 12px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(0,0,0,.10); white-space: pre-wrap;">
         ${escapeHtml(conclusion)}
