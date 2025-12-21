@@ -1033,128 +1033,72 @@ function renderQuestion() {
 
   const ranks = state.answersRank[q.id] || [0, 0, 0, 0];
 
-  app.innerHTML = `
-    <div class="card">
-      <div class="progress">Question ${state.index + 1} / ${QUESTIONS.length}</div>
-      <h2>${q.id}. ${escapeHtml(q.text)}</h2>
+app.innerHTML = `
+  <div class="card">
+    <div class="progress">Question ${state.index + 1} / ${QUESTIONS.length}</div>
+    <h2>${q.id}. ${escapeHtml(q.text)}</h2>
 
-      <div id="optionsContainer" class="options">
-        ${q.options
-          .map((opt, i) => {
-            const rank = ranks[i] ?? 0;
-            const rankedClass = rank > 0 ? "is-ranked" : "";
-            return `
-              <button type="button" class="optionBtn option ${rankedClass}" data-idx="${i}">
-                <span class="rankBadge">${rank}</span>
-                <span class="optionLabel">${escapeHtml(opt.label)}.</span>
-                <span class="optionText">${escapeHtml(opt.text)}</span>
-              </button>
-            `;
-          })
-          .join("")}
-      </div>
-
-      <div class="actions">
-        <button id="prevBtn" type="button" ${state.index === 0 ? "disabled" : ""}>Précédent</button>
-        <button id="nextBtn" type="button">${state.index === QUESTIONS.length - 1 ? "Terminer" : "Suivant"}</button>
-      </div>
-
-      <div class="hint">
-        Clique sur une option pour faire tourner son rang :
-        <b>0 → 1 → 2 → 3 → 4 → 0</b>.
-      </div>
+    <div id="optionsContainer" class="options">
+      ${q.options
+        .map((opt, i) => {
+          const rank = ranks[i] ?? 0;
+          const rankedClass = rank > 0 ? "is-ranked" : "";
+          return `
+            <button type="button" class="optionBtn option ${rankedClass}" data-idx="${i}">
+              <span class="rankBadge">${rank}</span>
+              <span class="optionLabel">${escapeHtml(opt.label)}.</span>
+              <span class="optionText">${escapeHtml(opt.text)}</span>
+            </button>
+          `;
+        })
+        .join("")}
     </div>
-  `;
 
-  document.getElementById("optionsContainer").addEventListener("click", (e) => {
-    const btn = e.target.closest("button[data-idx]");
-    if (!btn) return;
-
-    const optionIndex = Number(btn.dataset.idx);
-    const arr = state.answersRank[q.id] || [0, 0, 0, 0];
-
-    const current = arr[optionIndex] ?? 0;
-    const newRank = nextRankValue(current);
-
-    arr[optionIndex] = newRank;
-    enforceUniqueRanks(arr, optionIndex, newRank);
-
-    state.answersRank[q.id] = arr;
-    renderQuestion();
-  });
-
-  el("prevBtn").addEventListener("click", () => {
-    state.index = Math.max(0, state.index - 1);
-    renderQuestion();
-  });
-
-  el("nextBtn").addEventListener("click", () => {
-    if (state.index >= QUESTIONS.length - 1) {
-      renderResults();
-    } else {
-      state.index += 1;
-      renderQuestion();
-    }
-  });
-}
-
-// Ancienne logique checkbox → inutilisée
-function saveSelections() {}
-
-function renderResults() {
-  const app = el("app");
-  const counts = tallyProfiles(state.answersRank);
-  const [top, second] = pickTopTwoRandomTies(counts);
-
-  const key = resultKey(top.profile, second.profile);
-  const mapped = PAIR_RESULTS[key];
-
-  const figure = mapped?.figure ?? "Aucune figure liée";
-  const tagline = mapped?.tagline ?? "Cette combinaison n’a pas encore été associée à une figure.";
-  const conclusion = mapped?.conclusion ?? `À AJOUTER — clé: ${key}`;
-
-  app.innerHTML = `
-    <div class="card">
-      <h2>Résultat</h2>
-
-      <p><b>Profil dominant :</b> ${escapeHtml(top.profile)} (${top.score})</p>
-      <p><b>Profil secondaire :</b> ${escapeHtml(second.profile)} (${second.score})</p>
-
-      <hr/>
-
-      <h3>${escapeHtml(figure)}</h3>
-      <p style="opacity:.85; margin-top: 6px;">${escapeHtml(tagline)}</p>
-
-      <div style="margin-top: 12px; padding: 12px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(0,0,0,.10); white-space: pre-wrap;">
-        ${escapeHtml(conclusion)}
-      </div>
-
-      <details>
-        <summary>Voir le détail des scores</summary>
-        <ul>
-          ${Object.entries(counts)
-            .sort((a, b) => b[1] - a[1])
-            .map(([profile, score]) => `<li>${escapeHtml(profile)}: ${score}</li>`)
-            .join("")}
-        </ul>
-      </details>
-
-      <div class="actions">
-        <button id="restartBtn">Recommencer</button>
-      </div>
-
-      <div class="hint" style="margin-top:10px;">
-        Clé utilisée pour la conclusion : <b>${escapeHtml(key)}</b>
-      </div>
+    <div class="actions">
+      <button id="prevBtn" type="button" ${state.index === 0 ? "disabled" : ""}>Précédent</button>
+      <button id="clearBtn" type="button">Effacer</button>
+      <button id="nextBtn" type="button">${state.index === QUESTIONS.length - 1 ? "Terminer" : "Suivant"}</button>
     </div>
-  `;
 
-  el("restartBtn").addEventListener("click", () => {
-    state.index = 0;
-    state.answersRank = {};
+    <div class="hint">
+      Clique sur les options dans l’ordre : <b>1, 2, 3, 4</b>.
+      Reclique une option pour l’enlever. Bouton <b>Effacer</b> pour recommencer la question.
+    </div>
+  </div>
+`;
+
+document.getElementById("optionsContainer").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-idx]");
+  if (!btn) return;
+
+  const optionIndex = Number(btn.dataset.idx);
+  const arr = state.answersRank[q.id] || [0, 0, 0, 0];
+
+  assignNextRank(arr, optionIndex);
+
+  state.answersRank[q.id] = arr;
+  renderQuestion();
+});
+
+el("prevBtn").addEventListener("click", () => {
+  state.index = Math.max(0, state.index - 1);
+  renderQuestion();
+});
+
+el("nextBtn").addEventListener("click", () => {
+  if (state.index >= QUESTIONS.length - 1) {
+    renderResults();
+  } else {
+    state.index += 1;
     renderQuestion();
-  });
-}
+  }
+});
+
+el("clearBtn").addEventListener("click", () => {
+  clearQuestionRanks(q.id);
+  renderQuestion();
+});
+
 
 // --------------------
 // INIT
