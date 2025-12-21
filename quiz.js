@@ -941,6 +941,7 @@ function assignNextRank(rankArr, optionIndex) {
 
 function clearQuestionRanks(questionId) {
   state.answersRank[questionId] = [0, 0, 0, 0];
+}
 
 function getOptionProfile(questionObj, optionIndex) {
   // On suppose que ton objet question ressemble à:
@@ -1098,7 +1099,7 @@ el("clearBtn").addEventListener("click", () => {
   clearQuestionRanks(q.id);
   renderQuestion();
 });
-
+}
 
 // --------------------
 // INIT
