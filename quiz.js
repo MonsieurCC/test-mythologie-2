@@ -348,7 +348,7 @@ const QUESTIONS = [
     text: "Quand une relation devient importante pour toi…",
     options: [
       { label: "A", text: "Tu cherches à créer un lien fort et marquant.", profile: "Séducteur" },
-      { label: "B", text: "Tu gardes ton autonomie.", profile: "Indépendant" },
+      { label: "B", text: "Tu t'épanouies en restant toi-même.", profile: "Indépendant" },
       { label: "C", text: "Tu t’investis émotionnellement.", profile: "Sensible" },
       { label: "D", text: "Tu veux être fiable et présent.", profile: "Protecteur" },
     ],
@@ -367,9 +367,9 @@ const QUESTIONS = [
     id: 4,
     text: "Pendant un déménagement tu…",
     options: [
-      { label: "A", text: "Essaye de suivre les consignes de ton partenaire pour lui faire plaisir.", profile: "Sensible" },
-      { label: "B", text: "Tu bouges le plus de boîte possible.", profile: "Combattant" },
-      { label: "C", text: "Tu nettoie la cochonnerie que personne ne touche.", profile: "Indépendant" },
+      { label: "A", text: "Essayes de suivre les consignes de ton partenaire pour lui faire plaisir.", profile: "Sensible" },
+      { label: "B", text: "Bouges le plus de boîtes possibles.", profile: "Combattant" },
+      { label: "C", text: "Nettoies la cochonnerie que personne ne touche.", profile: "Indépendant" },
       { label: "D", text: "Dis aux gens quoi faire.", profile: "Leader" },
     ],
   },
@@ -407,20 +407,20 @@ const QUESTIONS = [
     id: 8,
     text: "Quand tu dois faire un choix important…",
     options: [
-      { label: "A", text: "Tu agis rapidement.", profile: "Combattant" },
-      { label: "B", text: "Tu imagines une nouvelle possibilité.", profile: "Créatif" },
+      { label: "A", text: "Tu laisse le tout mijoter, tu prendras la décision sur le coup.", profile: "Combattant" },
+      { label: "B", text: "Tu pèses les pours et le contres.", profile: "Indépendant" },
       { label: "C", text: "Tu te déconnectes pour avoir la tête libre.", profile: "Libre" },
-      { label: "D", text: "Tu écoutes ce que tu ressens profondément.", profile: "Sensible" },
+      { label: "D", text: "Tu en parles à des amis.", profile: "Sensible" },
     ],
   },
   {
     id: 9,
     text: "Quand quelqu’un te fait une remarque blessante…",
     options: [
-      { label: "A", text: "Tu gères ta peine.", profile: "Sensible" },
-      { label: "B", text: "Tu essaies d’expliquer calmement.", profile: "Créatif" },
-      { label: "C", text: "Tu préfères ignorer.", profile: "Indépendant" },
-      { label: "D", text: "Tu te défends.", profile: "Combattant" },
+      { label: "A", text: "Tu relances la conversation pour comprendre sa position.", profile: "Sensible" },
+      { label: "B", text: "Tu te fais une note mentale d'organiser une intervention avec la personne en temps opportun", profile: "Créatif" },
+      { label: "C", text: "Tu t'en fou.", profile: "Indépendant" },
+      { label: "D", text: "Tu confrontes la personne.", profile: "Combattant" },
     ],
   },
   {
@@ -435,12 +435,12 @@ const QUESTIONS = [
   },
   {
     id: 11,
-    text: "Quand une relation devient compliquée…",
+    text: "Quand une relation devient compliquée avec un bon ami…",
     options: [
       { label: "A", text: "Tu fais des efforts pour écouter l’autre.", profile: "Protecteur" },
-      { label: "B", text: "Tu analyses ce qui ne fonctionne pas.", profile: "Créatif" },
-      { label: "C", text: "Tu prends de la distance.", profile: "Indépendant" },
-      { label: "D", text: "Tu cherches à garder le lien.", profile: "Séducteur" },
+      { label: "B", text: "Tu analyses ce qui ne fonctionne pas pour mieux agir après.", profile: "Créatif" },
+      { label: "C", text: "Tu prends une pause pour lui permettre de se réparer.", profile: "Indépendant" },
+      { label: "D", text: "Tu t'investis pour amener du positif de manière alternative.", profile: "Séducteur" },
     ],
   },
   {
@@ -457,10 +457,10 @@ const QUESTIONS = [
     id: 13,
     text: "Ton avenir idéal serait surtout…",
     options: [
-      { label: "A", text: "Pouvoir choisir ton rythme.", profile: "Libre" },
-      { label: "B", text: "Construire quelque chose de solide.", profile: "Protecteur" },
+      { label: "A", text: "De pouvoir prendre de longues vacances.", profile: "Libre" },
+      { label: "B", text: "Construire une famille solide.", profile: "Protecteur" },
       { label: "C", text: "Être reconnu et apprécié.", profile: "Séducteur" },
-      { label: "D", text: "Vivre quelque chose de profond.", profile: "Sensible" },
+      { label: "D", text: "Vivre un amour profond.", profile: "Sensible" },
     ],
   },
   {
@@ -497,10 +497,10 @@ const QUESTIONS = [
     id: 17,
     text: "Pour toi, réussir sa vie, c’est surtout…",
     options: [
-      { label: "A", text: "Vivre des relations.", profile: "Séducteur" },
-      { label: "B", text: "Être utile aux autres.", profile: "Protecteur" },
-      { label: "C", text: "Pouvoir avancer sans contraintes.", profile: "Libre" },
-      { label: "D", text: "Devenir serein.", profile: "Indépendant" },
+      { label: "A", text: "Être connu.", profile: "Séducteur" },
+      { label: "B", text: "Être entouré.", profile: "Protecteur" },
+      { label: "C", text: "Être heureux.", profile: "Libre" },
+      { label: "D", text: "Être riche.", profile: "Indépendant" },
     ],
   },
   {
@@ -515,12 +515,12 @@ const QUESTIONS = [
   },
   {
     id: 19,
-    text: "Dans un groupe nouveau…",
+    text: "Dans un nouveau groupe…",
     options: [
       { label: "A", text: "Tu t’adaptes sans trop y penser.", profile: "Libre" },
       { label: "B", text: "Tu observes avant de t’ouvrir.", profile: "Indépendant" },
       { label: "C", text: "Tu cherches un repère rassurant.", profile: "Sensible" },
-      { label: "D", text: "Tu t’affirmes naturellement.", profile: "Leader" },
+      { label: "D", text: "Tu organises une acitivité pour découvrir les autres.", profile: "Leader" },
     ],
   },
   {
@@ -528,7 +528,7 @@ const QUESTIONS = [
     text: "Les vacances idéales sont…",
     options: [
       { label: "A", text: "Dans un endroit rempli de nouvelles personnes.", profile: "Séducteur" },
-      { label: "B", text: "Un endroit calme et paisible.", profile: "Indépendant" },
+      { label: "B", text: "Dans un endroit calme et paisible.", profile: "Indépendant" },
       { label: "C", text: "Avec quelques amis proches.", profile: "Sensible" },
       { label: "D", text: "Un voyage d’aventures.", profile: "Libre" },
     ],
@@ -537,10 +537,10 @@ const QUESTIONS = [
     id: 21,
     text: "Face à une règle que tu trouves injuste…",
     options: [
-      { label: "A", text: "Tu l’évites.", profile: "Indépendant" },
-      { label: "B", text: "Tu la refuses clairement.", profile: "Combattant" },
-      { label: "C", text: "Tu proposes une autre façon de faire.", profile: "Créatif" },
-      { label: "D", text: "Tu fais avec pour éviter les conflits.", profile: "Protecteur" },
+      { label: "A", text: "Tu l’ignores.", profile: "Indépendant" },
+      { label: "B", text: "Tu confrontes le responsable.", profile: "Combattant" },
+      { label: "C", text: "Tu cherches une autre façon de faire.", profile: "Créatif" },
+      { label: "D", text: "Tu en parle à tes amis.", profile: "Protecteur" },
     ],
   },
   {
@@ -555,12 +555,12 @@ const QUESTIONS = [
   },
   {
     id: 23,
-    text: "Travailler avec quelqu’un de très différent de toi…",
+    text: "Lorsque tu travailles avec quelqu’un de très différent de toi…",
     options: [
-      { label: "A", text: "Tu fais attention aux émotions.", profile: "Protecteur" },
-      { label: "B", text: "Tu cherches à apprendre.", profile: "Créatif" },
-      { label: "C", text: "Tu poses un cadre clair.", profile: "Leader" },
-      { label: "D", text: "Tu gardes tes distances.", profile: "Indépendant" },
+      { label: "A", text: "Tu fais attention à ne pas la froisser.", profile: "Protecteur" },
+      { label: "B", text: "Tu cherches à apprendre à la connaître.", profile: "Créatif" },
+      { label: "C", text: "Tu lui proposes des règles du jeu.", profile: "Leader" },
+      { label: "D", text: "Tu évites les problèmes.", profile: "Indépendant" },
     ],
   },
   {
@@ -570,7 +570,7 @@ const QUESTIONS = [
       { label: "A", text: "Capitain America, car les gens l’écoute.", profile: "Leader" },
       { label: "B", text: "Iron Man, car il est intelligent.", profile: "Créatif" },
       { label: "C", text: "Deap Pool, car il est drôle.", profile: "Séducteur" },
-      { label: "D", text: "Super Man, car il peut sauver n’importe qui.", profile: "Protecteur" },
+      { label: "D", text: "Charles Xavier, car il peut sauver n’importe qui.", profile: "Protecteur" },
     ],
   },
   {
@@ -578,14 +578,14 @@ const QUESTIONS = [
     text: "Des ados intimident un inconnu, tu…",
     options: [
       { label: "A", text: "Tu chuchotes à l’inconnu de te suivre.", profile: "Protecteur" },
-      { label: "B", text: "Les attaques.", profile: "Combattant" },
+      { label: "B", text: "Les attaquent.", profile: "Combattant" },
       { label: "C", text: "Tu vas chercher de l’aide.", profile: "Indépendant" },
-      { label: "D", text: "Tu leur parles en changent le sujet.", profile: "Créatif" },
+      { label: "D", text: "Tu leur parles en changeant le sujet.", profile: "Séducteur" },
     ],
   },
   {
     id: 26,
-    text: "Quand tu imagines ton futur…",
+    text: "Quand tu imagines ton futur, tu te vois…",
     options: [
       { label: "A", text: "Ressentir des choses fortes.", profile: "Sensible" },
       { label: "B", text: "Pouvoir changer de voie.", profile: "Libre" },
@@ -597,10 +597,10 @@ const QUESTIONS = [
     id: 27,
     text: "Sous pression …",
     options: [
-      { label: "A", text: "Tu te replies sur toi.", profile: "Indépendant" },
+      { label: "A", text: "Tu deviens une meilleure version de toi-même.", profile: "Créatif" },
       { label: "B", text: "Tu changes de direction.", profile: "Libre" },
-      { label: "C", text: "Tu cherches à t’exprimer.", profile: "Créatif" },
-      { label: "D", text: "Tu t’accroches aux personnes que tu aimes.", profile: "Sensible" },
+      { label: "C", text: "Tu fonces.", profile: "Combattant" },
+      { label: "D", text: "Tu parles à tes amis.", profile: "Sensible" },
     ],
   },
   {
@@ -610,17 +610,17 @@ const QUESTIONS = [
       { label: "A", text: "Fonçant dans les flames.", profile: "Combattant" },
       { label: "B", text: "Organisant une levée de fonds pour les victimes.", profile: "Créatif" },
       { label: "C", text: "Soignant les personnes blessées.", profile: "Protecteur" },
-      { label: "D", text: "Tu passes chaque jour voir les victimes pour leur parler.", profile: "Sensible" },
+      { label: "D", text: "Passant chaque jour voir les victimes pour leur parler.", profile: "Sensible" },
     ],
   },
   {
     id: 29,
     text: "Après une grande réussite…",
     options: [
-      { label: "A", text: "Tu veux être reconnu.", profile: "Séducteur" },
-      { label: "B", text: "Tu la savoures.", profile: "Indépendant" },
-      { label: "C", text: "Tu penses au prochain défi.", profile: "Combattant" },
-      { label: "D", text: "Tu la partages.", profile: "Sensible" },
+      { label: "A", text: "Tu veux fêter avec des gens.", profile: "Séducteur" },
+      { label: "B", text: "Tu veux te reposer.", profile: "Indépendant" },
+      { label: "C", text: "Tu penses à ce que tu aurais pu mieux faire.", profile: "Combattant" },
+      { label: "D", text: "Tu veux en parler à tes proches.", profile: "Sensible" },
     ],
   },
   {
@@ -637,10 +637,10 @@ const QUESTIONS = [
     id: 31,
     text: "La fin de semaine vient d’arriver, pour bien la commencer tu…",
     options: [
-      { label: "A", text: "Tu regardes une série télé au complet.", profile: "Indépendant" },
+      { label: "A", text: "Regardes une série télé au complet.", profile: "Indépendant" },
       { label: "B", text: "Fais de la cuisine avec des amis.", profile: "Créatif" },
-      { label: "C", text: "Tu sors ton/ta copain/copine en tête à tête.", profile: "Protecteur" },
-      { label: "D", text: "Tu fais la fête dans un festival jusqu’au petite heure du matin.", profile: "Combattant" },
+      { label: "C", text: "Sors ton/ta copain/copine en tête à tête.", profile: "Protecteur" },
+      { label: "D", text: "Fais la fête dans un festival jusqu’au petite heure du matin.", profile: "Combattant" },
     ],
   },
   {
@@ -655,12 +655,12 @@ const QUESTIONS = [
   },
   {
     id: 33,
-    text: "Être fidèle à soi-même, c’est…",
+    text: "Dans l'univers d'Harry Potter, tu serais dans la maison…",
     options: [
-      { label: "A", text: "Agir sans influence.", profile: "Combattant" },
-      { label: "B", text: "Refuser de se laisser enfermer.", profile: "Libre" },
-      { label: "C", text: "Toucher les autres par ce que tu es.", profile: "Séducteur" },
-      { label: "D", text: "Assumer ses valeurs.", profile: "Leader" },
+      { label: "A", text: "Griffondor.", profile: "Combattant" },
+      { label: "B", text: "Poussoufle.", profile: "Libre" },
+      { label: "C", text: "Serpentard.", profile: "Séducteur" },
+      { label: "D", text: "Serdaigle.", profile: "Leader" },
     ],
   },
   {
@@ -675,42 +675,42 @@ const QUESTIONS = [
   },
   {
     id: 35,
-    text: "Si tu pouvais régler une chose dans le monde ça serait…",
+    text: "Si tu pouvais travailler à l'ONU pour régler une chose dans le monde ça serait…",
     options: [
-      { label: "A", text: "La faim dans le monde.", profile: "Protecteur" },
-      { label: "B", text: "La haine dans le monde.", profile: "Séducteur" },
-      { label: "C", text: "La paix entre les pays.", profile: "Leader" },
-      { label: "D", text: "La pauvreté dans le monde.", profile: "Indépendant" },
+      { label: "A", text: "La faim.", profile: "Protecteur" },
+      { label: "B", text: "La maladie.", profile: "Sensible" },
+      { label: "C", text: "Les conflits ethniques.", profile: "Leader" },
+      { label: "D", text: "La pauvreté.", profile: "Indépendant" },
     ],
   },
   {
     id: 36,
-    text: "Si tu pouvais améliorer quelque chose autour de toi…",
+    text: "Comme conseiller municipal tu proposerais à ta ville de travailler sur…",
     options: [
-      { label: "A", text: "La sécurité et le bien-être.", profile: "Protecteur" },
-      { label: "B", text: "Les règles.", profile: "Libre" },
-      { label: "C", text: "Les idées et projets.", profile: "Créatif" },
-      { label: "D", text: "Les relations humaines.", profile: "Séducteur" },
+      { label: "A", text: "La sécurité des gens.", profile: "Protecteur" },
+      { label: "B", text: "L'allègement des règles pour tous.", profile: "Libre" },
+      { label: "C", text: "Des nouvelles constructions", profile: "Créatif" },
+      { label: "D", text: "La diminution des taxes pour tous", profile: "Séducteur" },
     ],
   },
   {
     id: 37,
     text: "Quand tu es épuisé mentalement…",
     options: [
-      { label: "A", text: "Tu changes d’air.", profile: "Libre" },
+      { label: "A", text: "Tu fais une activité pour te change les idées", profile: "Libre" },
       { label: "B", text: "Tu continues coûte que coûte.", profile: "Leader" },
-      { label: "C", text: "Tu ressens tout très fort.", profile: "Sensible" },
-      { label: "D", text: "Tu t’isoles.", profile: "Indépendant" },
+      { label: "C", text: "Tu sors avec tes amis pour mieux te concentrer après.", profile: "Sensible" },
+      { label: "D", text: "Tu prends un repos bien calme et bien mérité.", profile: "Indépendant" },
     ],
   },
   {
     id: 38,
     text: "À quel mammifère tu t’identifies le plus…",
     options: [
-      { label: "A", text: "À l’éléphant.", profile: "Protecteur" },
-      { label: "B", text: "Au gorille.", profile: "Créatif" },
-      { label: "C", text: "Au blaireau.", profile: "Combattant" },
-      { label: "D", text: "Au loup.", profile: "Leader" },
+      { label: "A", text: "À l’éléphant et à sa famille", profile: "Leader" },
+      { label: "B", text: "Au castor et à son ingéniosité", profile: "Créatif" },
+      { label: "C", text: "Au lion", profile: "Séducteur" },
+      { label: "D", text: "Au chien sauage et à sa meute", profile: "Protecteur" },
     ],
   },
   {
@@ -730,7 +730,7 @@ const QUESTIONS = [
       { label: "A", text: "Ressentir quelque chose de fort.", profile: "Sensible" },
       { label: "B", text: "Être libre.", profile: "Libre" },
       { label: "C", text: "Avoir accompli quelque chose.", profile: "Combattant" },
-      { label: "D", text: "Être admiré.", profile: "Séducteur" },
+      { label: "D", text: "Être populaire.", profile: "Séducteur" },
     ],
   },
   {
@@ -745,9 +745,9 @@ const QUESTIONS = [
   },
   {
     id: 42,
-    text: "Si un choix déplaît à ton entourage…",
+    text: "Si un choix que tu prends déplaît à ton entourage…",
     options: [
-      { label: "A", text: "Tu prends du recul.", profile: "Indépendant" },
+      { label: "A", text: "Tu les ignores.", profile: "Indépendant" },
       { label: "B", text: "Tu argumentes.", profile: "Séducteur" },
       { label: "C", text: "Tu assumes.", profile: "Leader" },
       { label: "D", text: "Tu adaptes ton choix.", profile: "Libre" },
@@ -755,12 +755,12 @@ const QUESTIONS = [
   },
   {
     id: 43,
-    text: "Te définir toi-même, c’est surtout…",
+    text: "La saison qui te représente plus c'est",
     options: [
-      { label: "A", text: "Te dépasser.", profile: "Combattant" },
-      { label: "B", text: "Être touchant pour les autres.", profile: "Séducteur" },
-      { label: "C", text: "Évoluer selon tes expériences.", profile: "Libre" },
-      { label: "D", text: "Avoir une image claire.", profile: "Leader" },
+      { label: "A", text: "Le printemps, car c'est ni trop chaud ni trop froid.", profile: "Indépendant" },
+      { label: "B", text: "L'automne, car la natutre est magnifique.", profile: "Sensible" },
+      { label: "C", text: "L'été, car c'est plus facile de te déplacer.", profile: "Libre" },
+      { label: "D", text: "L'hiver, car malgré le froid il y a plein de choses à faire.", profile: "Combattant" },
     ],
   },
   {
@@ -777,10 +777,10 @@ const QUESTIONS = [
     id: 45,
     text: "En famille…",
     options: [
-      { label: "A", text: "Tu gardes ton espace.", profile: "Indépendant" },
-      { label: "B", text: "Tu soutiens.", profile: "Protecteur" },
-      { label: "C", text: "Tu ressens tout très fort.", profile: "Sensible" },
-      { label: "D", text: "Tu montres la voie.", profile: "Leader" },
+      { label: "A", text: "Tu fais ta part... on ne choisit pas sa famille", profile: "Indépendant" },
+      { label: "B", text: "Tu aides les autres.", profile: "Protecteur" },
+      { label: "C", text: "Tu participes, car les autres mettre des efforts.", profile: "Sensible" },
+      { label: "D", text: "Tu organises des activités.", profile: "Leader" },
     ],
   },
   {
@@ -790,7 +790,7 @@ const QUESTIONS = [
       { label: "A", text: "Épicé.", profile: "Combattant" },
       { label: "B", text: "Réconfortant.", profile: "Protecteur" },
       { label: "C", text: "Beau.", profile: "Séducteur" },
-      { label: "D", text: "Prestigieux.", profile: "Leader" },
+      { label: "D", text: "Recherché.", profile: "Leader" },
     ],
   },
   {
@@ -805,22 +805,22 @@ const QUESTIONS = [
   },
   {
     id: 48,
-    text: "Te sentir à ta place, c’est…",
+    text: "Te sentir confortable, c’est…",
     options: [
-      { label: "A", text: "Être libre.", profile: "Libre" },
-      { label: "B", text: "Être entouré.", profile: "Protecteur" },
-      { label: "C", text: "Créer du lien fort.", profile: "Séducteur" },
-      { label: "D", text: "Être reconnu.", profile: "Leader" },
+      { label: "A", text: "Ne pas avoir de trop de contraintes.", profile: "Libre" },
+      { label: "B", text: "Avoir la chance de voir tes proches heureux", profile: "Protecteur" },
+      { label: "C", text: "Te sentir apprécié", profile: "Séducteur" },
+      { label: "D", text: "Faire une différence", profile: "Leader" },
     ],
   },
   {
     id: 49,
-    text: "Face à un désaccord profond…",
+    text: "Ton amoureux/euse est de moins en moins heureux avec toi mais ne t'en parles pas, tu",
     options: [
-      { label: "A", text: "Tu défends ta position.", profile: "Combattant" },
-      { label: "B", text: "Tu prends du recul.", profile: "Indépendant" },
-      { label: "C", text: "Tu structures le dialogue.", profile: "Leader" },
-      { label: "D", text: "Tu cherches à comprendre.", profile: "Créatif" },
+      { label: "A", text: "Tu lui en parles", profile: "Combattant" },
+      { label: "B", text: "Tu lui donnes de la distance.", profile: "Sensible" },
+      { label: "C", text: "Tu en parles avec des amis.", profile: "Séducteur" },
+      { label: "D", text: "Tu proposes des activités pour renouer la flamme.", profile: "Créatif" },
     ],
   },
   {
@@ -837,28 +837,28 @@ const QUESTIONS = [
     id: 51,
     text: "Quand tu te sens mis à l’écart…",
     options: [
-      { label: "A", text: "Change d’environnement.", profile: "Libre" },
-      { label: "B", text: "Tu ne t’en fais pas, tu feras des nouveaux amis au pire.", profile: "Séducteur" },
-      { label: "C", text: "Tu t’affirmes.", profile: "Leader" },
-      { label: "D", text: "Tu le vis très fort.", profile: "Sensible" },
+      { label: "A", text: "Tu changes d’environnement.", profile: "Libre" },
+      { label: "B", text: "Tu ne t’en fais pas, tu feras des nouveaux amis au pire.", profile: "Leader" },
+      { label: "C", text: "Tu t’affirmes.", profile: "Séducteur" },
+      { label: "D", text: "Tu le vis fort, personne n'aime être rejetée.", profile: "Sensible" },
     ],
   },
   {
     id: 52,
-    text: "Quand tu aides quelqu’un tu le fais…",
+    text: "Au Moyen Âge tu serais,",
     options: [
-      { label: "A", text: "Pour respecter son autonomie.", profile: "Indépendant" },
-      { label: "B", text: "Par empathie.", profile: "Sensible" },
-      { label: "C", text: "Par responsabilité.", profile: "Leader" },
-      { label: "D", text: "Pour protéger.", profile: "Protecteur" },
+      { label: "A", text: "Un/une moine/moinesse, tu pourrais bien vivre sans problème", profile: "Indépendant" },
+      { label: "B", text: "Un/une architecte d'travaillant à bâtir une grande cathédrale", profile: "Créatif" },
+      { label: "C", text: "Un/une juge occupé à améliorer le fonctionne de la cité ", profile: "Leader" },
+      { label: "D", text: "Un/une chevalier, tu serais nourri et capable de te défendre.", profile: "Séducteur" },
     ],
   },
   {
     id: 53,
-    text: "Ton auto idéal serait…",
+    text: "Ton auto idéalw serait…",
     options: [
       { label: "A", text: "Un pickup qui te permettra déplacer n’importe où.", profile: "Libre" },
-      { label: "B", text: "Une Toyota qui ne te durera 20 ans.", profile: "Leader" },
+      { label: "B", text: "Une Toyota qui te durera 20 ans.", profile: "Leader" },
       { label: "C", text: "Un char de sport.", profile: "Séducteur" },
       { label: "D", text: "Une mi-vanne qui pourra te permettre de conduire tous tes amis", profile: "Sensible" },
     ],
@@ -877,10 +877,10 @@ const QUESTIONS = [
     id: 55,
     text: "Le respect se gagne surtout par…",
     options: [
-      { label: "A", text: "L’action.", profile: "Combattant" },
-      { label: "B", text: "Le lien émotionnel.", profile: "Séducteur" },
-      { label: "C", text: "La cohérence.", profile: "Leader" },
-      { label: "D", text: "La liberté d’être soi.", profile: "Libre" },
+      { label: "A", text: "Les actions.", profile: "Combattant" },
+      { label: "B", text: "La qualité des liens avec les gens.", profile: "Sensible" },
+      { label: "C", text: "La compétence.", profile: "Leader" },
+      { label: "D", text: "La capacité à s'adapter", profile: "Libre" },
     ],
   },
   {
@@ -900,22 +900,61 @@ const QUESTIONS = [
 // --------------------
 const state = {
   index: 0,
-  answersByQuestionId: {}, // { [id]: string[] profiles }
+
+  // answersRank[qIndex] = [0..4, 0..4, 0..4, 0..4]
+  // Exemple: [2,0,1,4] => option A=2, B=0, C=1, D=4
+  answersRank: Array.from({ length: QUESTIONS.length }, () => [0, 0, 0, 0]),
+};
+
+// Barème: rang -> points
+const RANK_POINTS = {
+  0: 0,
+  1: 5,
+  2: 4,
+  3: 2,
+  4: 1,
 };
 
 // --------------------
 // UTILITAIRES
 // --------------------
+
+function nextRankValue(v) {
+  // cycle 0→1→2→3→4→0
+  const nv = (v + 1) % 5;
+  return nv;
+}
+
+// règle: unicité des rangs 1..4 dans une même question
+// mode "remplacer": si on met un rang déjà utilisé ailleurs, l’autre retombe à 0.
+function enforceUniqueRanks(rankArr, chosenOptionIndex, newRank) {
+  if (newRank === 0) return rankArr;
+
+  for (let i = 0; i < rankArr.length; i++) {
+    if (i !== chosenOptionIndex && rankArr[i] === newRank) {
+      rankArr[i] = 0;
+    }
+  }
+  return rankArr;
+}
+
+function getOptionProfile(questionObj, optionIndex) {
+  // On suppose que ton objet question ressemble à:
+  // { text: "...", options: [{ text:"...", profile:"Leader" }, ...] }
+  // sinon adapte ici seulement.
+  return questionObj.options[optionIndex].profile;
+}
+
 function makeEmptyCounts() {
   const counts = {};
   for (const p of PROFILES) counts[p] = 0;
   return counts;
 }
 
-function tallyProfiles(answersByQuestionId) {
+function tallyProfiles(answersRank) {
   const counts = makeEmptyCounts();
-  for (const qid of Object.keys(answersByQuestionId)) {
-    for (const profile of answersByQuestionId[qid]) {
+  for (const qid of Object.keys(answersRank)) {
+    for (const profile of answersRank[qid]) {
       if (counts[profile] === undefined) counts[profile] = 0;
       counts[profile] += 1;
     }
@@ -988,7 +1027,7 @@ function renderQuestion() {
     return;
   }
 
-  const selectedProfiles = state.answersByQuestionId[q.id] || [];
+  const selectedProfiles = state.answersRank[q.id] || [];
 
   app.innerHTML = `
     <div class="card">
@@ -1045,12 +1084,12 @@ function saveSelections(questionId) {
     .map((input) => input.value)
     .filter(Boolean);
 
-  state.answersByQuestionId[questionId] = checked;
+  state.answersRank[questionId] = checked;
 }
 
 function renderResults() {
   const app = el("app");
-  const counts = tallyProfiles(state.answersByQuestionId);
+  const counts = tallyProfiles(state.answersRank);
   const [top, second] = pickTopTwoRandomTies(counts);
 
   const key = resultKey(top.profile, second.profile);
@@ -1098,7 +1137,7 @@ function renderResults() {
 
   el("restartBtn").addEventListener("click", () => {
     state.index = 0;
-    state.answersByQuestionId = {};
+    state.answersRank = {};
     renderQuestion();
   });
 }
