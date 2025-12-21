@@ -438,7 +438,7 @@ const QUESTIONS = [
     text: "Quand une relation devient compliquée avec un bon ami…",
     options: [
       { label: "A", text: "Tu fais des efforts pour écouter l’autre.", profile: "Protecteur" },
-      { label: "B", text: "Tu réfléchis ce qui ne fonctionne pas pour mieux agir après.", profile: "Créatif" },
+      { label: "B", text: "Tu réfléchis à ce qui ne fonctionne pas pour mieux agir après.", profile: "Créatif" },
       { label: "C", text: "Tu prends une pause, le temps réparer bien des choses.", profile: "Indépendant" },
       { label: "D", text: "Tu t'investis pour amener du positif de manière alternative.", profile: "Séducteur" },
     ],
@@ -477,7 +477,7 @@ const QUESTIONS = [
     id: 15,
     text: "Dans une équipe sportive, tu es celui/celle qui…",
     options: [
-      { label: "A", text: "Insulte l'équipe ennemie qui intimide tout coéquipier.", profile: "Combattant" },
+      { label: "A", text: "Insulte l'équipe ennemie qui intimide ton coéquipier.", profile: "Combattant" },
       { label: "B", text: "Marque.", profile: "Séducteur" },
       { label: "C", text: "Fais la passe pour marquer.", profile: "Leader" },
       { label: "D", text: "Joue sérieusement.", profile: "Indépendant" },
@@ -520,7 +520,7 @@ const QUESTIONS = [
       { label: "A", text: "Tu t’adaptes sans trop y penser.", profile: "Libre" },
       { label: "B", text: "Tu observes avant de t’ouvrir.", profile: "Indépendant" },
       { label: "C", text: "Tu t'assures d'être plaisant.", profile: "Sensible" },
-      { label: "D", text: "Tu organises une activité pour découvrir les autres.", profile: "Leader" },
+      { label: "D", text: "Tu organises un jeu pour découvrir les autres.", profile: "Leader" },
     ],
   },
   {
@@ -617,7 +617,7 @@ const QUESTIONS = [
     id: 29,
     text: "Après une grande réussite…",
     options: [
-      { label: "A", text: "Tu faire une grosse fête.", profile: "Séducteur" },
+      { label: "A", text: "Tu fais une grosse fête.", profile: "Séducteur" },
       { label: "B", text: "Tu penses au prochain projet.", profile: "Créatif" },
       { label: "C", text: "Tu penses à ce que tu aurais pu mieux faire.", profile: "Combattant" },
       { label: "D", text: "Tu veux en parler à tes proches.", profile: "Sensible" },
@@ -697,7 +697,7 @@ const QUESTIONS = [
     id: 37,
     text: "Quand tu es épuisé mentalement…",
     options: [
-      { label: "A", text: "Tu fais une activité pour te change les idées", profile: "Libre" },
+      { label: "A", text: "Tu fais une activité pour te changer les idées", profile: "Libre" },
       { label: "B", text: "Tu continues coûte que coûte.", profile: "Leader" },
       { label: "C", text: "Tu sors avec tes amis pour mieux te concentrer après.", profile: "Sensible" },
       { label: "D", text: "Tu prends un repos bien calme et bien mérité.", profile: "Indépendant" },
@@ -808,9 +808,9 @@ const QUESTIONS = [
     text: "Être bien, c’est…",
     options: [
       { label: "A", text: "Ne pas avoir de trop de contraintes.", profile: "Libre" },
-      { label: "B", text: "Voir tes proches heureux", profile: "Protecteur" },
-      { label: "C", text: "Te sentir apprécié", profile: "Séducteur" },
-      { label: "D", text: "Faire une différence", profile: "Leader" },
+      { label: "B", text: "Voir tes proches heureux.", profile: "Protecteur" },
+      { label: "C", text: "Te sentir apprécié.", profile: "Séducteur" },
+      { label: "D", text: "Faire une différence.", profile: "Leader" },
     ],
   },
   {
@@ -847,7 +847,7 @@ const QUESTIONS = [
     id: 52,
     text: "Au Moyen Âge tu serais,",
     options: [
-      { label: "A", text: "Un/une moine/moinesse, vivant un vie simple en nature sans manquer de bouffe", profile: "Indépendant" },
+      { label: "A", text: "Un/une moine/moinesse, vivant une vie simple en nature sans manquer de bouffe", profile: "Indépendant" },
       { label: "B", text: "Un/une des artistes faisant les vitaux de Notre-Dame de Paris", profile: "Créatif" },
       { label: "C", text: "Un/une juge, au moins tu serais lire et écrire ", profile: "Leader" },
       { label: "D", text: "Un/une mercenaire, payer à faire une vie d'aventure.", profile: "Combattant" },
@@ -870,7 +870,7 @@ const QUESTIONS = [
       { label: "A", text: "De pouvoir t’adapter.", profile: "Libre" },
       { label: "B", text: "De faire des compromis.", profile: "Protecteur" },
       { label: "C", text: "De surmonter les problèmes.", profile: "Combattant" },
-      { label: "D", text: "De cheminer à travers les étapes de vos vies.", profile: "Leader" },
+      { label: "D", text: "De s'assurer que jamais vous ne deviez plate.", profile: "Leader" },
     ],
   },
   {
@@ -880,7 +880,7 @@ const QUESTIONS = [
       { label: "A", text: "Les actions.", profile: "Combattant" },
       { label: "B", text: "Des liens d'amitié.", profile: "Sensible" },
       { label: "C", text: "La compétence.", profile: "Leader" },
-      { label: "D", text: "La capacité à s'adapter", profile: "Libre" },
+      { label: "D", text: "Par l'authenticité", profile: "Libre" },
     ],
   },
   {
