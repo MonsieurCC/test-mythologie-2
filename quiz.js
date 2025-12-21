@@ -1102,6 +1102,62 @@ function renderQuestion() {
   });
 }
 
+function renderResults() {
+  const app = el("app");
+
+  const counts = tallyProfiles();
+  const [top, second] = pickTopTwoRandomTies(counts);
+
+  const key = resultKey(top.profile, second.profile);
+  const mapped = PAIR_RESULTS[key];
+
+  const figure = mapped?.figure ?? "Aucune figure liée";
+  const tagline = mapped?.tagline ?? "Cette combinaison n’a pas encore été associée à une figure.";
+  const conclusion = mapped?.conclusion ?? `À AJOUTER — clé: ${key}`;
+
+  app.innerHTML = `
+    <div class="card">
+      <h2>Résultat</h2>
+
+      <p><b>Profil dominant :</b> ${escapeHtml(top.profile)} (${top.score})</p>
+      <p><b>Profil secondaire :</b> ${escapeHtml(second.profile)} (${second.score})</p>
+
+      <hr/>
+
+      <h3>${escapeHtml(figure)}</h3>
+      <p style="opacity:.85; margin-top: 6px;">${escapeHtml(tagline)}</p>
+
+      <div style="margin-top: 12px; padding: 12px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(0,0,0,.10); white-space: pre-wrap;">
+        ${escapeHtml(conclusion)}
+      </div>
+
+      <details>
+        <summary>Voir le détail des scores</summary>
+        <ul>
+          ${Object.entries(counts)
+            .sort((a, b) => b[1] - a[1])
+            .map(([profile, score]) => `<li>${escapeHtml(profile)}: ${score}</li>`)
+            .join("")}
+        </ul>
+      </details>
+
+      <div class="actions">
+        <button id="restartBtn" type="button">Recommencer</button>
+      </div>
+
+      <div class="hint" style="margin-top:10px;">
+        Clé utilisée pour la conclusion : <b>${escapeHtml(key)}</b>
+      </div>
+    </div>
+  `;
+
+  el("restartBtn").addEventListener("click", () => {
+    state.index = 0;
+    state.answersRank = Array.from({ length: QUESTIONS.length }, () => [0, 0, 0, 0]);
+    renderQuestion();
+  });
+}
+
 // --------------------
 // INIT
 // --------------------
