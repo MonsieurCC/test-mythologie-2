@@ -389,3 +389,18 @@ body.result-mode details{
   background: rgba(0,0,0,.02);
 }
 
+/* --------------------------
+   Image dans la conclusion
+-------------------------- */
+.result-image{
+  display: flex;
+  justify-content: center;
+  margin: 16px 0 20px;
+}
+
+.result-image img{
+  max-width: 240px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
