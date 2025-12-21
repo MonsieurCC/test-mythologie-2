@@ -919,24 +919,28 @@ const RANK_POINTS = {
 // UTILITAIRES
 // --------------------
 
-function nextRankValue(v) {
-  // cycle 0→1→2→3→4→0
-  const nv = (v + 1) % 5;
-  return nv;
-}
+function assignNextRank(rankArr, optionIndex) {
+  const current = rankArr[optionIndex] ?? 0;
 
-// règle: unicité des rangs 1..4 dans une même question
-// mode "remplacer": si on met un rang déjà utilisé ailleurs, l’autre retombe à 0.
-function enforceUniqueRanks(rankArr, chosenOptionIndex, newRank) {
-  if (newRank === 0) return rankArr;
+   if (current > 0) {
+    const removed = current;
+    rankArr[optionIndex] = 0;
 
-  for (let i = 0; i < rankArr.length; i++) {
-    if (i !== chosenOptionIndex && rankArr[i] === newRank) {
-      rankArr[i] = 0;
+    for (let i = 0; i < rankArr.length; i++) {
+      if (rankArr[i] > removed) rankArr[i] -= 1;
     }
+    return rankArr;
   }
+
+   const maxRank = Math.max(0, ...rankArr);
+  if (maxRank >= 4) return rankArr; // déjà 4 choix classés → on ignore
+
+  rankArr[optionIndex] = maxRank + 1;
   return rankArr;
 }
+
+function clearQuestionRanks(questionId) {
+  state.answersRank[questionId] = [0, 0, 0, 0];
 
 function getOptionProfile(questionObj, optionIndex) {
   // On suppose que ton objet question ressemble à:
