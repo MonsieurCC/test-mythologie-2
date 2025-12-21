@@ -14,10 +14,15 @@
 
   --shadow: 0 10px 30px rgba(0,0,0,.30);
   --radius: 16px;
+
+  /* ✅ Typo premium (via Google Fonts dans ton HTML) */
+  --font-ui: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
 }
 
 *{ box-sizing: border-box; }
 html,body{ height: 100%; }
+
 body{
   margin: 0;
   color: var(--text);
@@ -26,14 +31,16 @@ body{
     radial-gradient(1000px 500px at 85% 35%, rgba(185,167,255,.22), transparent 55%),
     radial-gradient(800px 400px at 50% 95%, rgba(255,255,255,.08), transparent 50%),
     var(--bg);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: var(--font-ui);
   line-height: 1.35;
 }
 
+/* --------------------------
+   Layout
+-------------------------- */
 .page{
   padding: 22px 16px 60px;
 }
-
 .page-inner{
   max-width: 920px;
   margin: 0 auto;
@@ -50,7 +57,6 @@ body{
   background: rgba(11, 16, 32, .55);
   border-bottom: 1px solid rgba(255,255,255,.10);
 }
-
 .header-inner{
   max-width: 920px;
   margin: 0 auto;
@@ -60,13 +66,11 @@ body{
   justify-content:space-between;
   gap: 14px;
 }
-
 .brand{
   display:flex;
   align-items:center;
   gap: 12px;
 }
-
 .brand-mark{
   width: 42px;
   height: 42px;
@@ -78,18 +82,16 @@ body{
   box-shadow: 0 10px 22px rgba(0,0,0,.22);
   font-size: 18px;
 }
-
 .brand-title{
+  font-family: var(--font-display);
   font-weight: 800;
   letter-spacing: .2px;
   font-size: 15px;
 }
-
 .brand-subtitle{
   color: var(--muted);
   font-size: 12.5px;
 }
-
 .header-actions{
   display:flex;
   gap:10px;
@@ -109,34 +111,33 @@ button{
   cursor: pointer;
   transition: transform .08s ease, background .18s ease, border-color .18s ease;
 }
-
 button:hover{
   background: rgba(255,255,255,.10);
   border-color: rgba(255,255,255,.26);
 }
-
 button:active{
   transform: translateY(1px);
 }
-
 button:disabled{
   opacity: .55;
   cursor: not-allowed;
 }
-
 .ghost-btn{
   background: transparent;
 }
 
 /* --------------------------
-   Quiz Card (compat avec ton quiz.js)
+   Quiz Card
 -------------------------- */
 .app .card{
   margin: 18px auto 0;
   padding: 18px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+
+  /* ✅ Fond uniforme (plus lisible) */
+  background: rgba(8, 12, 24, .72);
+
   box-shadow: var(--shadow);
 
   /* IMPORTANT: on laisse de la place en bas pour la barre sticky */
@@ -145,13 +146,17 @@ button:disabled{
 
 .app h2{
   margin: 10px 0 10px;
-  font-size: 20px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.2;
   letter-spacing: .1px;
 }
 
 .app h3{
   margin: 10px 0 8px;
+  font-family: var(--font-display);
   font-size: 16px;
+  letter-spacing: .2px;
   color: rgba(255,255,255,.92);
 }
 
@@ -160,9 +165,8 @@ button:disabled{
   align-items:center;
   gap: 10px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 13.5px;
 }
-
 .progress::before{
   content:"";
   width: 10px;
@@ -173,7 +177,7 @@ button:disabled{
 }
 
 /* --------------------------
-   Options
+   Options (nouveau système: boutons)
 -------------------------- */
 .options{
   display:flex;
@@ -182,31 +186,43 @@ button:disabled{
   margin: 14px 0 10px;
 }
 
-.option{
+.optionBtn{
+  width:100%;
+  text-align:left;
+
   display:flex;
   gap: 12px;
   align-items:flex-start;
+
   padding: 12px;
   border-radius: 14px;
+
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(0,0,0,.12);
+
   transition: background .18s ease, border-color .18s ease, transform .08s ease;
 }
 
-.option:hover{
+.optionBtn:hover{
   background: rgba(255,255,255,.07);
   border-color: rgba(255,255,255,.22);
 }
-
-.option:active{
+.optionBtn:active{
   transform: translateY(1px);
 }
 
-.option input[type="checkbox"]{
-  margin-top: 3px;
-  width: 18px;
-  height: 18px;
-  accent-color: var(--accent);
+.rankBadge{
+  display:inline-flex;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  align-items:center;
+  justify-content:center;
+  font-weight: 800;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.08);
+  flex: 0 0 auto;
+  margin-top: 1px;
 }
 
 .optionLabel{
@@ -217,6 +233,14 @@ button:disabled{
 
 .optionText{
   color: rgba(255,255,255,.92);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+/* Quand une option est classée (>0) */
+.optionBtn.is-ranked{
+  border-color: rgba(138,180,255,.30);
+  background: rgba(138,180,255,.08);
 }
 
 /* --------------------------
@@ -254,10 +278,15 @@ button:disabled{
   border-color: rgba(138,180,255,.55);
 }
 
+/* Bouton Effacer un peu “neutre” */
+#clearBtn{
+  opacity: .95;
+}
+
 .hint{
   margin-top: 10px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 13.5px;
 }
 
 /* --------------------------
@@ -270,19 +299,16 @@ details{
   padding: 10px 12px;
   background: rgba(0,0,0,.10);
 }
-
 summary{
   cursor: pointer;
   color: rgba(255,255,255,.90);
   font-weight: 700;
 }
-
 details ul{
   margin: 10px 0 0;
   padding-left: 18px;
   color: rgba(255,255,255,.86);
 }
-
 hr{
   border: none;
   height: 1px;
@@ -313,19 +339,53 @@ hr{
   .app .card{ padding-bottom: 140px; } /* plus de place car boutons en colonne */
 }
 
-.rankBadge{
-  display:inline-flex;
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  align-items:center;
-  justify-content:center;
-  font-weight: 800;
-  border: 1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.08);
-  margin-right: 10px;
+/* ==========================
+   RESULT MODE (page blanche)
+   (Active via: document.body.classList.add("result-mode");)
+========================== */
+body.result-mode{
+  background: #ffffff;
+  color: #111827;
 }
-.optionBtn{
-  width:100%;
-  text-align:left;
+
+body.result-mode .site-header{
+  background: rgba(255,255,255,.85);
+  border-bottom: 1px solid rgba(0,0,0,.08);
 }
+
+body.result-mode .brand-subtitle{
+  color: rgba(17,24,39,.65);
+}
+
+body.result-mode button{
+  color: #111827;
+  border-color: rgba(0,0,0,.12);
+  background: rgba(0,0,0,.03);
+}
+body.result-mode button:hover{
+  background: rgba(0,0,0,.06);
+  border-color: rgba(0,0,0,.18);
+}
+
+body.result-mode .app .card{
+  background: #ffffff;
+  border-color: rgba(0,0,0,.12);
+  color: #111827;
+}
+
+body.result-mode .optionText,
+body.result-mode .hint,
+body.result-mode .progress,
+body.result-mode details ul{
+  color: rgba(17,24,39,.85);
+}
+
+body.result-mode hr{
+  background: rgba(0,0,0,.10);
+}
+
+body.result-mode details{
+  border-color: rgba(0,0,0,.10);
+  background: rgba(0,0,0,.02);
+}
+
