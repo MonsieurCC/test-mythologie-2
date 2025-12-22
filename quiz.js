@@ -1137,17 +1137,17 @@ function renderResults() {
 
       <hr/>
 
+      ${imageSrc ? `
+      <div class="result-image">
+      <img src="${imageSrc}" alt="${escapeHtml(figure)}">
+      </div>
+      ` : ""}
+
       <h3>${escapeHtml(figure)}</h3>
 
          <p style="opacity:.85; margin-top: 6px;">
         ${escapeHtml(tagline)}
         </p>
-
-         ${imageSrc ? `
-         <div class="result-image">
-         <img src="${imageSrc}" alt="${escapeHtml(figure)}">
-         </div>
-         ` : ""}
 
       <div style="margin-top: 12px; padding: 12px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(0,0,0,.10); white-space: pre-wrap;">
         ${escapeHtml(conclusion)}
